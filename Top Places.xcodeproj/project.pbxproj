@@ -22,6 +22,7 @@
 		113264FE190FA61C0011078D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113264DD190FA61C0011078D /* UIKit.framework */; };
 		11326506190FA61C0011078D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11326504190FA61C0011078D /* InfoPlist.strings */; };
 		11326508190FA61C0011078D /* Top_PlacesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11326507190FA61C0011078D /* Top_PlacesTests.m */; };
+		11326513190FAC4A0011078D /* RecentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11326512190FAC4A0011078D /* RecentsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		11326503190FA61C0011078D /* Top PlacesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Top PlacesTests-Info.plist"; sourceTree = "<group>"; };
 		11326505190FA61C0011078D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		11326507190FA61C0011078D /* Top_PlacesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Top_PlacesTests.m; sourceTree = "<group>"; };
+		11326511190FAC4A0011078D /* RecentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentsTableViewController.h; sourceTree = "<group>"; };
+		11326512190FAC4A0011078D /* RecentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 				113264EE190FA61C0011078D /* Main_iPad.storyboard */,
 				113264F1190FA61C0011078D /* TopPlacesViewController.h */,
 				113264F2190FA61C0011078D /* TopPlacesViewController.m */,
+				11326511190FAC4A0011078D /* RecentsTableViewController.h */,
+				11326512190FAC4A0011078D /* RecentsTableViewController.m */,
 				113264F4190FA61C0011078D /* Images.xcassets */,
 				113264E0190FA61C0011078D /* Supporting Files */,
 			);
@@ -255,6 +260,7 @@
 			files = (
 				113264F3190FA61C0011078D /* TopPlacesViewController.m in Sources */,
 				113264EA190FA61C0011078D /* AppDelegate.m in Sources */,
+				11326513190FAC4A0011078D /* RecentsTableViewController.m in Sources */,
 				113264E6190FA61C0011078D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
