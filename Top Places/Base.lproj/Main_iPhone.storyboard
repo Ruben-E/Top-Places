@@ -144,10 +144,10 @@
             </objects>
             <point key="canvasLocation" x="1450" y="533"/>
         </scene>
-        <!--Photo View Controller-->
+        <!--Picture View Controller-->
         <scene sceneID="tuE-kZ-f1Y">
             <objects>
-                <viewController id="zj7-gZ-BqM" customClass="PhotoViewController" sceneMemberID="viewController">
+                <viewController id="zj7-gZ-BqM" customClass="PictureViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="egA-Jx-BbY"/>
                         <viewControllerLayoutGuide type="bottom" id="3L2-JR-clC"/>

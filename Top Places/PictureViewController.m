@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Ruben Ernst. All rights reserved.
 //
 
-#import "PhotoViewController.h"
+#import "PictureViewController.h"
 
-@interface PhotoViewController ()
+@interface PictureViewController ()
 
 @end
 
-@implementation PhotoViewController
+@implementation PictureViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
