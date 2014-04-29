@@ -7,22 +7,16 @@
 //
 
 #import "TopPlacesTableViewController.h"
-#import "FlickrFetcher.h"
+#import "TopPlacesFlickr.h"
+#import "Place.h"
 
 @interface TopPlacesTableViewController ()
+
+
 
 @end
 
 @implementation TopPlacesTableViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -43,41 +37,35 @@
 
 #pragma mark - Table view data source
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//    // Return the number of sections.
-//    return 1;
-//}
-//
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-//{
-//    return @"Test";
-//}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return [self.topPlacesFlickr.countries count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    Country *country = [self.topPlacesFlickr getCountryByRowNumber:section];
+    return country.name;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    NSURL *url = [FlickrFetcher URLforTopPlaces];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-    
-    NSDictionary *pictures = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
-    
-    NSDictionary *placesResults = pictures[@"places"];
-    NSArray *places = placesResults[@"place"];
-    
-    NSLog(@"%@", pictures);
-    
-    return [places count];
-
+    Country *country = [self.topPlacesFlickr getCountryByRowNumber:section];
+    return [country.places count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    Country *country = [self.topPlacesFlickr getCountryByRowNumber:indexPath.section];
+    Place *place = [country getPlaceByRowNumber:indexPath.row];
+    
+    //[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = @"Test";
+    cell.textLabel.text = place.name;
+    cell.detailTextLabel.text = place.state;
     
     // Configure the cell...
     
@@ -133,5 +121,15 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark Setters / Getters
+
+- (TopPlacesFlickr *)topPlacesFlickr {
+    if (!_topPlacesFlickr) {
+        _topPlacesFlickr = [[TopPlacesFlickr alloc] initWithFlickrData];
+    }
+    
+    return _topPlacesFlickr;
+}
 
 @end

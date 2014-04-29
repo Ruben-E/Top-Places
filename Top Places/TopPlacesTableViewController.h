@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TopPlacesFlickr.h"
 
 @interface TopPlacesTableViewController : UITableViewController
+
+@property (nonatomic, strong) TopPlacesFlickr *topPlacesFlickr;
 
 @end
