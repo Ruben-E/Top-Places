@@ -119,11 +119,18 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"ShowTopPicturesOfCity"]) {
-        PlaceTableViewController *cityTableViewController = [segue destinationViewController];
+        PlaceTableViewController *cityTableViewController = (PlaceTableViewController *)[segue destinationViewController];
         
+        UITableViewCell *cell = (UITableViewCell*)sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        
+        Country *country = [self.topPlacesFlickr getCountryByRowNumber:indexPath.section];
+        Place *place = [country getPlaceByRowNumber:indexPath.row];
+        
+        if (place) {
+            cityTableViewController.place = place;
+        }
     }
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
 
 
