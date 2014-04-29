@@ -7,17 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Picture.h"
 
 @interface TopPlacesFlickr : NSObject
 
 @property NSArray *countries;
 
-
 - (TopPlacesFlickr *)initWithFlickrData;
-- (void)getPictures;
-- (void)getPlaces;
-- (void)getPictureByRowNumber:(NSUInteger) rowNumber;
-- (void)getPictureByPictureId:(NSUInteger) pictureId;
+- (NSArray *)getPictures;
+- (NSArray *)getPlaces;
+- (Picture *)getPictureByRowNumber:(NSUInteger) rowNumber;
+- (Picture *)getPictureByPictureId:(NSUInteger) pictureId;
 
 
 @end
