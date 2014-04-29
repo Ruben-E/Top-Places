@@ -7,6 +7,7 @@
 //
 
 #import "TopPlacesTableViewController.h"
+#import "FlickrFetcher.h"
 
 @interface TopPlacesTableViewController ()
 
@@ -26,6 +27,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSURL *url = [FlickrFetcher URLforTopPlaces];
+    
+    NSData *content = [NSData dataWithContentsOfURL:url];
+    
+    NSArray *pictures = [NSJSONSerialization JSONObjectWithData:content options:0 error:NULL];
+    
+    NSLog(@"%@", pictures);
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
