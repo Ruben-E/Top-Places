@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Picture.h"
 
 @interface PictureViewController : UIViewController
+
+@property (nonatomic, strong) Picture *picture;
 
 @end
