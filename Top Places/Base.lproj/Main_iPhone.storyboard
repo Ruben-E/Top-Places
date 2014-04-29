@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller - Top Places-->
+        <!--Top Places Table View Controller - Top Places-->
         <scene sceneID="loD-hk-Zop">
             <objects>
-                <tableViewController id="USy-WN-n95" sceneMemberID="viewController">
+                <tableViewController id="USy-WN-n95" customClass="TopPlacesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="jEV-1b-Tvf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,10 +36,10 @@
             </objects>
             <point key="canvasLocation" x="1450" y="-203"/>
         </scene>
-        <!--Table View Controller-->
+        <!--City Table View Controller-->
         <scene sceneID="Pvh-RD-MF0">
             <objects>
-                <tableViewController id="MdU-tV-ADM" sceneMemberID="viewController">
+                <tableViewController id="MdU-tV-ADM" customClass="CityTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="gsV-UD-oTH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="364" y="207"/>
         </scene>
-        <!--Table View Controller - Recents-->
+        <!--Recents Table View Controller - Recents-->
         <scene sceneID="VQ0-Gb-tCS">
             <objects>
-                <tableViewController id="KFF-KJ-oHd" sceneMemberID="viewController">
+                <tableViewController id="KFF-KJ-oHd" customClass="RecentsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qAB-Qj-MS3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,10 +119,10 @@
             </objects>
             <point key="canvasLocation" x="1450" y="533"/>
         </scene>
-        <!--View Controller-->
+        <!--Photo View Controller-->
         <scene sceneID="tuE-kZ-f1Y">
             <objects>
-                <viewController id="zj7-gZ-BqM" sceneMemberID="viewController">
+                <viewController id="zj7-gZ-BqM" customClass="PhotoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="egA-Jx-BbY"/>
                         <viewControllerLayoutGuide type="bottom" id="3L2-JR-clC"/>

@@ -123,18 +123,18 @@
 		113264DF190FA61C0011078D /* Top Places */ = {
 			isa = PBXGroup;
 			children = (
-				113264EB190FA61C0011078D /* Main_iPhone.storyboard */,
-				1132651A190FADDA0011078D /* PhotoViewController.h */,
-				1132651B190FADDA0011078D /* PhotoViewController.m */,
-				113264EE190FA61C0011078D /* Main_iPad.storyboard */,
-				11326514190FACEE0011078D /* TopPlacesTableViewController.h */,
-				11326515190FACEE0011078D /* TopPlacesTableViewController.m */,
-				11326511190FAC4A0011078D /* RecentsTableViewController.h */,
-				11326512190FAC4A0011078D /* RecentsTableViewController.m */,
-				113264F4190FA61C0011078D /* Images.xcassets */,
-				113264E0190FA61C0011078D /* Supporting Files */,
 				11326517190FAD740011078D /* CityTableViewController.h */,
+				1132651A190FADDA0011078D /* PhotoViewController.h */,
+				11326511190FAC4A0011078D /* RecentsTableViewController.h */,
+				11326514190FACEE0011078D /* TopPlacesTableViewController.h */,
 				11326518190FAD740011078D /* CityTableViewController.m */,
+				1132651B190FADDA0011078D /* PhotoViewController.m */,
+				11326512190FAC4A0011078D /* RecentsTableViewController.m */,
+				11326515190FACEE0011078D /* TopPlacesTableViewController.m */,
+				113264F4190FA61C0011078D /* Images.xcassets */,
+				113264EE190FA61C0011078D /* Main_iPad.storyboard */,
+				113264EB190FA61C0011078D /* Main_iPhone.storyboard */,
+				113264E0190FA61C0011078D /* Supporting Files */,
 			);
 			path = "Top Places";
 			sourceTree = "<group>";
