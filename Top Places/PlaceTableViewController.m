@@ -8,6 +8,7 @@
 
 #import "PlaceTableViewController.h"
 #import "Place.h"
+#import "PictureViewController.h"
 
 @interface PlaceTableViewController ()
 
@@ -95,15 +96,23 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"ShowPicture"]) {
+        PictureViewController *pictureViewController = (PictureViewController *)[segue destinationViewController];
+        
+        UITableViewCell *cell = (UITableViewCell*)sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        
+        Picture *picture = [self.place getPictureByRowNumber:indexPath.row];
+        
+        if (picture) {
+            pictureViewController.picture = picture;
+        }
+    }
 }
-*/
 
 @end
