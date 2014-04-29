@@ -119,7 +119,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"ShowTopPicturesOfCity"]) {
-        PlaceTableViewController *cityTableViewController = (PlaceTableViewController *)[segue destinationViewController];
+        PlaceTableViewController *placeTableViewController = (PlaceTableViewController *)[segue destinationViewController];
         
         UITableViewCell *cell = (UITableViewCell*)sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
@@ -128,7 +128,7 @@
         Place *place = [country getPlaceByRowNumber:indexPath.row];
         
         if (place) {
-            cityTableViewController.place = place;
+            placeTableViewController.place = place;
         }
     }
 }
