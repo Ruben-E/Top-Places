@@ -10,15 +10,35 @@
 #import "Place.h"
 #import "Country.h"
 #import "Picture.h"
+#import "FlickrFetcher.h"
 
 @implementation TopPlacesFlickr
 
 - (TopPlacesFlickr *)initWithFlickrData {
     if ([self init]) {
-        //TODO: Fetch flickr data
+        NSURL *url = [FlickrFetcher URLforTopPlaces];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        
+        NSDictionary *content = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+        
+        self.countries = [self convertFlickrResponse:content];
     }
     
     return self;
+}
+
+-(void)addCountry:(Country *)country {
+    [self.countries addObject:country];
+}
+
+- (Country *)getCountryByName:(NSString *)name {
+    for (Country *country in self.countries) {
+        if ([country.name isEqualToString:name]) {
+            return country;
+        }
+    }
+    
+    return nil;
 }
 
 - (NSArray *)getPlaces {
@@ -65,11 +85,38 @@
     return nil;
 }
 
+- (NSMutableArray *)convertFlickrResponse:(NSDictionary *)response {
+    NSMutableArray *countries = [[NSMutableArray alloc] init];
+    
+    NSDictionary *placesResults = response[@"places"];
+    NSArray *places = placesResults[@"place"];
+    
+    for (NSDictionary *flickrPlace in places) {
+        NSString *placeName = flickrPlace[@"_content"];
+        NSArray *placeNameParts = [placeName componentsSeparatedByString:@", "];
+        
+        NSString *countryName = [placeNameParts lastObject];
+        
+        Country *country = [self getCountryByName:countryName];
+        if (!country) {
+            country = [[Country alloc] init];
+            [self addCountry:country];
+        }
+        
+        Place *place = [[Place alloc] init];
+        place.name = flickrPlace[@"woe_name"];
+        
+        [country.places addObject:place];
+    }
+    
+    return countries;
+}
+
 #pragma mark Setters / Getters
 
-- (NSArray *)countries {
+- (NSMutableArray *)countries {
     if (!self.countries) {
-        self.countries = [[NSArray alloc] init];
+        self.countries = [[NSMutableArray alloc] init];
     }
     
     return self.countries;

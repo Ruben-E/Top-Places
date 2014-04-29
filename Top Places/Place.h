@@ -11,6 +11,6 @@
 @interface Place : NSObject
 
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSArray *pictures;
+@property (nonatomic, strong) NSMutableArray *pictures;
 
 @end

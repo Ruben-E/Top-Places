@@ -11,6 +11,6 @@
 @interface Country : NSObject
 
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSArray *places;
+@property (nonatomic, strong) NSMutableArray *places;
 
 @end
