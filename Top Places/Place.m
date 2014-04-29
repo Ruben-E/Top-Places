@@ -45,6 +45,10 @@ const unsigned int DEFAULT_MAX_RESULTS = 50;
         picture.owner = [(NSString *)[flickrPicture valueForKeyPath:FLICKR_PHOTO_OWNER] integerValue];
         picture.uploaded_at = [(NSString *)[flickrPicture valueForKeyPath:FLICKR_PHOTO_UPLOAD_DATE] integerValue];
         
+        if ([picture.title isEqualToString:@""]) {
+            picture.title = @"Unknown";
+        }
+        
         [pictures addObject:picture];
     }
     
