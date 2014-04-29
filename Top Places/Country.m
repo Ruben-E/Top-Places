@@ -10,4 +10,12 @@
 
 @implementation Country
 
+- (NSMutableArray *)places {
+    if (!_places) {
+        _places = [[NSMutableArray alloc] init];
+    }
+    
+    return _places;
+}
+
 @end

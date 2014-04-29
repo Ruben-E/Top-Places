@@ -15,7 +15,9 @@
 @implementation TopPlacesFlickr
 
 - (TopPlacesFlickr *)initWithFlickrData {
-    if ([self init]) {
+    self = [super init];
+    
+    if (!self) {
         NSURL *url = [FlickrFetcher URLforTopPlaces];
         NSData *data = [NSData dataWithContentsOfURL:url];
         
@@ -115,11 +117,11 @@
 #pragma mark Setters / Getters
 
 - (NSMutableArray *)countries {
-    if (!self.countries) {
-        self.countries = [[NSMutableArray alloc] init];
+    if (!_countries) {
+        _countries = [[NSMutableArray alloc] init];
     }
     
-    return self.countries;
+    return _countries;
 }
 
 @end
