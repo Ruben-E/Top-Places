@@ -201,13 +201,13 @@
 		117040CE190FCA32009F30D5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				117040CF190FCA72009F30D5 /* Picture.h */,
-				117040D0190FCA72009F30D5 /* Picture.m */,
-				117040D2190FCABA009F30D5 /* Place.h */,
-				117040D3190FCABA009F30D5 /* Place.m */,
 				117040D5190FCADB009F30D5 /* Country.h */,
-				117040D6190FCADB009F30D5 /* Country.m */,
+				117040CF190FCA72009F30D5 /* Picture.h */,
+				117040D2190FCABA009F30D5 /* Place.h */,
 				117040D8190FCAF0009F30D5 /* TopPlaces.h */,
+				117040D6190FCADB009F30D5 /* Country.m */,
+				117040D0190FCA72009F30D5 /* Picture.m */,
+				117040D3190FCABA009F30D5 /* Place.m */,
 				117040D9190FCAF0009F30D5 /* TopPlaces.m */,
 			);
 			name = Model;

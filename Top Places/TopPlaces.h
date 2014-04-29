@@ -10,4 +10,12 @@
 
 @interface TopPlaces : NSObject
 
+@property NSArray *countries;
+
+- (void)getPictures;
+- (void)getPlaces;
+- (void)getPictureByRowNumber:(NSUInteger) rowNumber;
+- (void)getPictureByPictureId:(NSUInteger) pictureId;
+
+
 @end

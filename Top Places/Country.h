@@ -10,4 +10,7 @@
 
 @interface Country : NSObject
 
+@property NSString *name;
+@property NSArray *places;
+
 @end

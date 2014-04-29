@@ -10,4 +10,9 @@
 
 @interface Picture : NSObject
 
+@property NSUInteger pictureId;
+@property NSString *name;
+@property NSString *description;
+@property NSString *url;
+
 @end

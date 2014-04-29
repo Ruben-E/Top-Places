@@ -10,4 +10,7 @@
 
 @interface Place : NSObject
 
+@property NSString *name;
+@property NSArray *pictures;
+
 @end

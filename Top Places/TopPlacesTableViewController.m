@@ -28,14 +28,6 @@
 {
     [super viewDidLoad];
     
-    NSURL *url = [FlickrFetcher URLforTopPlaces];
-    
-    NSData *content = [NSData dataWithContentsOfURL:url];
-    
-    NSArray *pictures = [NSJSONSerialization JSONObjectWithData:content options:0 error:NULL];
-    
-    NSLog(@"%@", pictures);
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -51,30 +43,47 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+//{
+//    // Return the number of sections.
+//    return 1;
+//}
+//
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+//{
+//    return @"Test";
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    NSURL *url = [FlickrFetcher URLforTopPlaces];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    
+    NSDictionary *pictures = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+    
+    NSDictionary *placesResults = pictures[@"places"];
+    NSArray *places = placesResults[@"place"];
+    
+    NSLog(@"%@", pictures);
+    
+    return [places count];
+
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    cell.textLabel.text = @"Test";
     
     // Configure the cell...
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
