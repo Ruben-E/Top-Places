@@ -27,6 +27,7 @@
 		1132651C190FADDA0011078D /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1132651B190FADDA0011078D /* PhotoViewController.m */; };
 		11326521190FB00E0011078D /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 11326520190FB00E0011078D /* FlickrFetcher.m */; };
 		117040D1190FCA72009F30D5 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = 117040D0190FCA72009F30D5 /* Picture.m */; };
+		117040D4190FCABA009F30D5 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 117040D3190FCABA009F30D5 /* Place.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		11326520190FB00E0011078D /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
 		117040CF190FCA72009F30D5 /* Picture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Picture.h; sourceTree = "<group>"; };
 		117040D0190FCA72009F30D5 /* Picture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Picture.m; sourceTree = "<group>"; };
+		117040D2190FCABA009F30D5 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
+		117040D3190FCABA009F30D5 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +197,8 @@
 			children = (
 				117040CF190FCA72009F30D5 /* Picture.h */,
 				117040D0190FCA72009F30D5 /* Picture.m */,
+				117040D2190FCABA009F30D5 /* Place.h */,
+				117040D3190FCABA009F30D5 /* Place.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				11326521190FB00E0011078D /* FlickrFetcher.m in Sources */,
 				11326513190FAC4A0011078D /* RecentsTableViewController.m in Sources */,
 				1132651C190FADDA0011078D /* PhotoViewController.m in Sources */,
+				117040D4190FCABA009F30D5 /* Place.m in Sources */,
 				113264E6190FA61C0011078D /* main.m in Sources */,
 				11326516190FACEE0011078D /* TopPlacesTableViewController.m in Sources */,
 			);
