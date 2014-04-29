@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Ruben Ernst. All rights reserved.
 //
 
-#import "TopPlaces.h"
+#import "TopPlacesFlickr.h"
 
-@implementation TopPlaces
+@implementation TopPlacesFlickr
 
 @end

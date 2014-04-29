@@ -29,7 +29,7 @@
 		117040D1190FCA72009F30D5 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = 117040D0190FCA72009F30D5 /* Picture.m */; };
 		117040D4190FCABA009F30D5 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 117040D3190FCABA009F30D5 /* Place.m */; };
 		117040D7190FCADB009F30D5 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 117040D6190FCADB009F30D5 /* Country.m */; };
-		117040DA190FCAF0009F30D5 /* TopPlaces.m in Sources */ = {isa = PBXBuildFile; fileRef = 117040D9190FCAF0009F30D5 /* TopPlaces.m */; };
+		117040DA190FCAF0009F30D5 /* TopPlacesFlickr.m in Sources */ = {isa = PBXBuildFile; fileRef = 117040D9190FCAF0009F30D5 /* TopPlacesFlickr.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,8 +78,8 @@
 		117040D3190FCABA009F30D5 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		117040D5190FCADB009F30D5 /* Country.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
 		117040D6190FCADB009F30D5 /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
-		117040D8190FCAF0009F30D5 /* TopPlaces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopPlaces.h; sourceTree = "<group>"; };
-		117040D9190FCAF0009F30D5 /* TopPlaces.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopPlaces.m; sourceTree = "<group>"; };
+		117040D8190FCAF0009F30D5 /* TopPlacesFlickr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopPlacesFlickr.h; sourceTree = "<group>"; };
+		117040D9190FCAF0009F30D5 /* TopPlacesFlickr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopPlacesFlickr.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,11 +204,11 @@
 				117040D5190FCADB009F30D5 /* Country.h */,
 				117040CF190FCA72009F30D5 /* Picture.h */,
 				117040D2190FCABA009F30D5 /* Place.h */,
-				117040D8190FCAF0009F30D5 /* TopPlaces.h */,
+				117040D8190FCAF0009F30D5 /* TopPlacesFlickr.h */,
 				117040D6190FCADB009F30D5 /* Country.m */,
 				117040D0190FCA72009F30D5 /* Picture.m */,
 				117040D3190FCABA009F30D5 /* Place.m */,
-				117040D9190FCAF0009F30D5 /* TopPlaces.m */,
+				117040D9190FCAF0009F30D5 /* TopPlacesFlickr.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -311,7 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				117040DA190FCAF0009F30D5 /* TopPlaces.m in Sources */,
+				117040DA190FCAF0009F30D5 /* TopPlacesFlickr.m in Sources */,
 				117040D1190FCA72009F30D5 /* Picture.m in Sources */,
 				113264EA190FA61C0011078D /* AppDelegate.m in Sources */,
 				11326519190FAD740011078D /* CityTableViewController.m in Sources */,

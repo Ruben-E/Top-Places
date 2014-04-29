@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TopPlaces : NSObject
+@interface TopPlacesFlickr : NSObject
 
 @property NSArray *countries;
 
