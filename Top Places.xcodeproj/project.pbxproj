@@ -114,8 +114,6 @@
 		113264DF190FA61C0011078D /* Top Places */ = {
 			isa = PBXGroup;
 			children = (
-				113264E8190FA61C0011078D /* AppDelegate.h */,
-				113264E9190FA61C0011078D /* AppDelegate.m */,
 				113264EB190FA61C0011078D /* Main_iPhone.storyboard */,
 				113264EE190FA61C0011078D /* Main_iPad.storyboard */,
 				113264F1190FA61C0011078D /* ViewController.h */,
@@ -129,6 +127,8 @@
 		113264E0190FA61C0011078D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				113264E8190FA61C0011078D /* AppDelegate.h */,
+				113264E9190FA61C0011078D /* AppDelegate.m */,
 				113264E1190FA61C0011078D /* Top Places-Info.plist */,
 				113264E2190FA61C0011078D /* InfoPlist.strings */,
 				113264E5190FA61C0011078D /* main.m */,
@@ -470,6 +470,7 @@
 				1132650D190FA61C0011078D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1132650E190FA61C0011078D /* Build configuration list for PBXNativeTarget "Top PlacesTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +479,7 @@
 				11326510190FA61C0011078D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
