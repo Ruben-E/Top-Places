@@ -93,20 +93,28 @@
         NSString *placeName = flickrPlace[@"_content"];
         NSArray *placeNameParts = [placeName componentsSeparatedByString:@", "];
         
+        NSString *cityName = [placeNameParts firstObject];
         NSString *countryName = [placeNameParts lastObject];
         
-        Country *country = [self getCountryByName:countryName];
-        if (!country) {
-            country = [[Country alloc] init];
-            country.name = countryName;
+        NSArray *middleItems = [placeNameParts subarrayWithRange: NSMakeRange(1, [placeNameParts count] - 2)];
+        NSString *state = [middleItems componentsJoinedByString:@", "];
+        
+        if (cityName && countryName) {
+        
+            Country *country = [self getCountryByName:countryName];
+            if (!country) {
+                country = [[Country alloc] init];
+                country.name = countryName;
+                
+                [self addCountry:country];
+            }
             
-            [self addCountry:country];
+            Place *place = [[Place alloc] init];
+            place.state = state;
+            place.name = cityName;
+            
+            [country.places addObject:place];
         }
-        
-        Place *place = [[Place alloc] init];
-        place.name = flickrPlace[@"woe_name"];
-        
-        [country.places addObject:place];
     }
 }
 
