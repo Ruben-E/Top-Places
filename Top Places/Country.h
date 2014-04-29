@@ -10,7 +10,7 @@
 
 @interface Country : NSObject
 
-@property NSString *name;
-@property NSArray *places;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSArray *places;
 
 @end

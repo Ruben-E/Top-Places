@@ -11,7 +11,7 @@
 
 @interface TopPlacesFlickr : NSObject
 
-@property NSArray *countries;
+@property (nonatomic, strong) NSArray *countries;
 
 - (TopPlacesFlickr *)initWithFlickrData;
 - (NSArray *)getPictures;

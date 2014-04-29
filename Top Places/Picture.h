@@ -10,9 +10,9 @@
 
 @interface Picture : NSObject
 
-@property NSUInteger pictureId;
-@property NSString *name;
-@property NSString *description;
-@property NSString *url;
+@property (nonatomic) NSUInteger pictureId;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *url;
 
 @end

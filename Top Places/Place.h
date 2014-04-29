@@ -10,7 +10,7 @@
 
 @interface Place : NSObject
 
-@property NSString *name;
-@property NSArray *pictures;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSArray *pictures;
 
 @end
