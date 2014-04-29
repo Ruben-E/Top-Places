@@ -12,6 +12,8 @@
 
 @property NSArray *countries;
 
+
+- (TopPlacesFlickr *)initWithFlickrData;
 - (void)getPictures;
 - (void)getPlaces;
 - (void)getPictureByRowNumber:(NSUInteger) rowNumber;
