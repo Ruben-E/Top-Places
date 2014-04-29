@@ -10,8 +10,11 @@
 
 @interface Place : NSObject
 
+@property (nonatomic, strong) NSString *placeId;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *state;
 @property (nonatomic, strong) NSMutableArray *pictures;
+
+extern unsigned int const DEFAULT_MAX_RESULTS;
 
 @end
