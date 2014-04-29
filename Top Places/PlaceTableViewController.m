@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Ruben Ernst. All rights reserved.
 //
 
-#import "CityTableViewController.h"
+#import "PlaceTableViewController.h"
 
-@interface CityTableViewController ()
+@interface PlaceTableViewController ()
 
 @end
 
-@implementation CityTableViewController
+@implementation PlaceTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {

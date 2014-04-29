@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Place.h"
 
-@interface CityTableViewController : UITableViewController
+@interface PlaceTableViewController : UITableViewController
+
+@property (nonatomic, strong) Place *place;
 
 @end

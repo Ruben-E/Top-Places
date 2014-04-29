@@ -23,7 +23,7 @@
 		11326508190FA61C0011078D /* Top_PlacesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 11326507190FA61C0011078D /* Top_PlacesTests.m */; };
 		11326513190FAC4A0011078D /* RecentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11326512190FAC4A0011078D /* RecentsTableViewController.m */; };
 		11326516190FACEE0011078D /* TopPlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11326515190FACEE0011078D /* TopPlacesTableViewController.m */; };
-		11326519190FAD740011078D /* CityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11326518190FAD740011078D /* CityTableViewController.m */; };
+		11326519190FAD740011078D /* PlaceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11326518190FAD740011078D /* PlaceTableViewController.m */; };
 		1132651C190FADDA0011078D /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1132651B190FADDA0011078D /* PhotoViewController.m */; };
 		11326521190FB00E0011078D /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 11326520190FB00E0011078D /* FlickrFetcher.m */; };
 		117040D1190FCA72009F30D5 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = 117040D0190FCA72009F30D5 /* Picture.m */; };
@@ -65,8 +65,8 @@
 		11326512190FAC4A0011078D /* RecentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentsTableViewController.m; sourceTree = "<group>"; };
 		11326514190FACEE0011078D /* TopPlacesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopPlacesTableViewController.h; sourceTree = "<group>"; };
 		11326515190FACEE0011078D /* TopPlacesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopPlacesTableViewController.m; sourceTree = "<group>"; };
-		11326517190FAD740011078D /* CityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityTableViewController.h; sourceTree = "<group>"; };
-		11326518190FAD740011078D /* CityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityTableViewController.m; sourceTree = "<group>"; };
+		11326517190FAD740011078D /* PlaceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceTableViewController.h; sourceTree = "<group>"; };
+		11326518190FAD740011078D /* PlaceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceTableViewController.m; sourceTree = "<group>"; };
 		1132651A190FADDA0011078D /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
 		1132651B190FADDA0011078D /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		1132651E190FB00E0011078D /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
@@ -141,11 +141,11 @@
 			children = (
 				117040CE190FCA32009F30D5 /* Model */,
 				1132651D190FAFF00011078D /* FlickrFetcher */,
-				11326517190FAD740011078D /* CityTableViewController.h */,
+				11326517190FAD740011078D /* PlaceTableViewController.h */,
 				1132651A190FADDA0011078D /* PhotoViewController.h */,
 				11326511190FAC4A0011078D /* RecentsTableViewController.h */,
 				11326514190FACEE0011078D /* TopPlacesTableViewController.h */,
-				11326518190FAD740011078D /* CityTableViewController.m */,
+				11326518190FAD740011078D /* PlaceTableViewController.m */,
 				1132651B190FADDA0011078D /* PhotoViewController.m */,
 				11326512190FAC4A0011078D /* RecentsTableViewController.m */,
 				11326515190FACEE0011078D /* TopPlacesTableViewController.m */,
@@ -314,7 +314,7 @@
 				117040DA190FCAF0009F30D5 /* TopPlacesFlickr.m in Sources */,
 				117040D1190FCA72009F30D5 /* Picture.m in Sources */,
 				113264EA190FA61C0011078D /* AppDelegate.m in Sources */,
-				11326519190FAD740011078D /* CityTableViewController.m in Sources */,
+				11326519190FAD740011078D /* PlaceTableViewController.m in Sources */,
 				11326521190FB00E0011078D /* FlickrFetcher.m in Sources */,
 				117040D7190FCADB009F30D5 /* Country.m in Sources */,
 				11326513190FAC4A0011078D /* RecentsTableViewController.m in Sources */,
