@@ -112,6 +112,7 @@
             Place *place = [[Place alloc] init];
             place.state = state;
             place.name = cityName;
+            place.placeId = flickrPlace[@"place_id"];
             
             [country.places addObject:place];
         }
