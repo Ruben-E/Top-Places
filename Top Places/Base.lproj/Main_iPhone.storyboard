@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Table View Controller - Top Places-->
         <scene sceneID="loD-hk-Zop">
             <objects>
                 <tableViewController id="USy-WN-n95" sceneMemberID="viewController">
@@ -27,7 +27,7 @@
                             <outlet property="delegate" destination="USy-WN-n95" id="h3j-En-Hem"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="1LT-fU-9o3"/>
+                    <navigationItem key="navigationItem" title="Top Places" id="1LT-fU-9o3"/>
                     <connections>
                         <segue destination="MdU-tV-ADM" kind="push" id="Rb9-AJ-DQI"/>
                     </connections>
@@ -87,7 +87,7 @@
             </objects>
             <point key="canvasLocation" x="364" y="207"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Table View Controller - Recents-->
         <scene sceneID="VQ0-Gb-tCS">
             <objects>
                 <tableViewController id="KFF-KJ-oHd" sceneMemberID="viewController">
@@ -110,7 +110,7 @@
                             <outlet property="delegate" destination="KFF-KJ-oHd" id="t0X-0M-ex1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="336-hH-dmc"/>
+                    <navigationItem key="navigationItem" title="Recents" id="336-hH-dmc"/>
                     <connections>
                         <segue destination="zj7-gZ-BqM" kind="push" id="fQN-w8-g5w"/>
                     </connections>
@@ -138,11 +138,11 @@
             </objects>
             <point key="canvasLocation" x="2574" y="533"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Top Places-->
         <scene sceneID="0UJ-um-NUJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i3Y-Nf-eHX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="xkU-Al-psd"/>
+                    <tabBarItem key="tabBarItem" title="Top Places" id="xkU-Al-psd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8na-lV-xwX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -157,11 +157,11 @@
             </objects>
             <point key="canvasLocation" x="924" y="-203"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Recents-->
         <scene sceneID="09r-u0-VeS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="omd-aG-OoU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Elr-aZ-Glf"/>
+                    <tabBarItem key="tabBarItem" title="Recents" id="Elr-aZ-Glf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="b6b-yL-fwz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

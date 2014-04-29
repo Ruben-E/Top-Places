@@ -15,7 +15,7 @@
 		113264EA190FA61C0011078D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 113264E9190FA61C0011078D /* AppDelegate.m */; };
 		113264ED190FA61C0011078D /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 113264EB190FA61C0011078D /* Main_iPhone.storyboard */; };
 		113264F0190FA61C0011078D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 113264EE190FA61C0011078D /* Main_iPad.storyboard */; };
-		113264F3190FA61C0011078D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 113264F2190FA61C0011078D /* ViewController.m */; };
+		113264F3190FA61C0011078D /* TopPlacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 113264F2190FA61C0011078D /* TopPlacesViewController.m */; };
 		113264F5190FA61C0011078D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 113264F4190FA61C0011078D /* Images.xcassets */; };
 		113264FC190FA61C0011078D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113264FB190FA61C0011078D /* XCTest.framework */; };
 		113264FD190FA61C0011078D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113264D9190FA61C0011078D /* Foundation.framework */; };
@@ -47,8 +47,8 @@
 		113264E9190FA61C0011078D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		113264EC190FA61C0011078D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		113264EF190FA61C0011078D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		113264F1190FA61C0011078D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		113264F2190FA61C0011078D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		113264F1190FA61C0011078D /* TopPlacesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopPlacesViewController.h; sourceTree = "<group>"; };
+		113264F2190FA61C0011078D /* TopPlacesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopPlacesViewController.m; sourceTree = "<group>"; };
 		113264F4190FA61C0011078D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		113264FA190FA61C0011078D /* Top PlacesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Top PlacesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		113264FB190FA61C0011078D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -116,8 +116,8 @@
 			children = (
 				113264EB190FA61C0011078D /* Main_iPhone.storyboard */,
 				113264EE190FA61C0011078D /* Main_iPad.storyboard */,
-				113264F1190FA61C0011078D /* ViewController.h */,
-				113264F2190FA61C0011078D /* ViewController.m */,
+				113264F1190FA61C0011078D /* TopPlacesViewController.h */,
+				113264F2190FA61C0011078D /* TopPlacesViewController.m */,
 				113264F4190FA61C0011078D /* Images.xcassets */,
 				113264E0190FA61C0011078D /* Supporting Files */,
 			);
@@ -253,7 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				113264F3190FA61C0011078D /* ViewController.m in Sources */,
+				113264F3190FA61C0011078D /* TopPlacesViewController.m in Sources */,
 				113264EA190FA61C0011078D /* AppDelegate.m in Sources */,
 				113264E6190FA61C0011078D /* main.m in Sources */,
 			);

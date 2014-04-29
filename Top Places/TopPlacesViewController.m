@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Ruben Ernst. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "TopPlacesViewController.h"
 
-@interface ViewController ()
+@interface TopPlacesViewController ()
 
 @end
 
-@implementation ViewController
+@implementation TopPlacesViewController
 
 - (void)viewDidLoad
 {
