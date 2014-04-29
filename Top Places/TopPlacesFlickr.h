@@ -9,17 +9,21 @@
 #import <Foundation/Foundation.h>
 #import "Picture.h"
 #import "Country.h"
+#import "Place.h"
 
 @interface TopPlacesFlickr : NSObject
 
 @property (nonatomic, strong) NSMutableArray *countries;
 
-- (void)addCountry:(Country *)country;
 - (TopPlacesFlickr *)initWithFlickrData;
+
 - (NSArray *)getPictures;
 - (NSArray *)getPlaces;
+
+- (void)addCountry:(Country *)country;
+
 - (Country *)getCountryByName:(NSString *)name;
-- (Picture *)getPictureByRowNumber:(NSUInteger) rowNumber;
+- (Country *)getCountryByRowNumber:(NSUInteger) rowNumber;
 - (Picture *)getPictureByPictureId:(NSUInteger) pictureId;
 
 

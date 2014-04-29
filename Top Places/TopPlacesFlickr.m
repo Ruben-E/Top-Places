@@ -17,13 +17,13 @@
 - (TopPlacesFlickr *)initWithFlickrData {
     self = [super init];
     
-    if (!self) {
+    if (self) {
         NSURL *url = [FlickrFetcher URLforTopPlaces];
         NSData *data = [NSData dataWithContentsOfURL:url];
         
         NSDictionary *content = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
         
-        self.countries = [self convertFlickrResponse:content];
+        [self convertFlickrResponse:content];
     }
     
     return self;
@@ -31,6 +31,10 @@
 
 -(void)addCountry:(Country *)country {
     [self.countries addObject:country];
+}
+
+- (Country *)getCountryByRowNumber:(NSUInteger)rowNumber {
+    return [self.countries objectAtIndex:rowNumber];
 }
 
 - (Country *)getCountryByName:(NSString *)name {
@@ -69,12 +73,6 @@
     return pictures;
 }
 
-- (Picture *)getPictureByRowNumber:(NSUInteger)rowNumber {
-    NSArray *pictures = [self getPictures];
-    
-    return [pictures objectAtIndex:rowNumber];
-}
-
 - (Picture *)getPictureByPictureId:(NSUInteger)pictureId {
     NSArray *pictures = [self getPictures];
     
@@ -87,9 +85,7 @@
     return nil;
 }
 
-- (NSMutableArray *)convertFlickrResponse:(NSDictionary *)response {
-    NSMutableArray *countries = [[NSMutableArray alloc] init];
-    
+- (void)convertFlickrResponse:(NSDictionary *)response {
     NSDictionary *placesResults = response[@"places"];
     NSArray *places = placesResults[@"place"];
     
@@ -102,6 +98,8 @@
         Country *country = [self getCountryByName:countryName];
         if (!country) {
             country = [[Country alloc] init];
+            country.name = countryName;
+            
             [self addCountry:country];
         }
         
@@ -110,8 +108,6 @@
         
         [country.places addObject:place];
     }
-    
-    return countries;
 }
 
 #pragma mark Setters / Getters
