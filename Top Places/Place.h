@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Picture.h"
 
 @interface Place : NSObject
 
@@ -16,5 +17,7 @@
 @property (nonatomic, strong) NSMutableArray *pictures;
 
 extern unsigned int const DEFAULT_MAX_RESULTS;
+
+- (Picture *)getPictureByRowNumber:(NSUInteger)rowNumber;
 
 @end

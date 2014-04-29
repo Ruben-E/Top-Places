@@ -51,4 +51,8 @@ const unsigned int DEFAULT_MAX_RESULTS = 50;
     return pictures;
 }
 
+- (Picture *)getPictureByRowNumber:(NSUInteger)rowNumber {
+    return [self.pictures objectAtIndex:rowNumber];
+}
+
 @end
