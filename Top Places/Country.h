@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Place.h"
 
 @interface Country : NSObject
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSMutableArray *places;
+
+- (Place *)getPlaceByRowNumber:(NSUInteger)rowNumber;
 
 @end

@@ -10,6 +10,10 @@
 
 @implementation Country
 
+- (Place *)getPlaceByRowNumber:(NSUInteger)rowNumber {
+    return [self.places objectAtIndex:rowNumber];
+}
+
 - (NSMutableArray *)places {
     if (!_places) {
         _places = [[NSMutableArray alloc] init];
