@@ -28,6 +28,7 @@
 		11326521190FB00E0011078D /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 11326520190FB00E0011078D /* FlickrFetcher.m */; };
 		117040D1190FCA72009F30D5 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = 117040D0190FCA72009F30D5 /* Picture.m */; };
 		117040D4190FCABA009F30D5 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 117040D3190FCABA009F30D5 /* Place.m */; };
+		117040D7190FCADB009F30D5 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 117040D6190FCADB009F30D5 /* Country.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		117040D0190FCA72009F30D5 /* Picture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Picture.m; sourceTree = "<group>"; };
 		117040D2190FCABA009F30D5 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		117040D3190FCABA009F30D5 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
+		117040D5190FCADB009F30D5 /* Country.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
+		117040D6190FCADB009F30D5 /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +202,8 @@
 				117040D0190FCA72009F30D5 /* Picture.m */,
 				117040D2190FCABA009F30D5 /* Place.h */,
 				117040D3190FCABA009F30D5 /* Place.m */,
+				117040D5190FCADB009F30D5 /* Country.h */,
+				117040D6190FCADB009F30D5 /* Country.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 				113264EA190FA61C0011078D /* AppDelegate.m in Sources */,
 				11326519190FAD740011078D /* CityTableViewController.m in Sources */,
 				11326521190FB00E0011078D /* FlickrFetcher.m in Sources */,
+				117040D7190FCADB009F30D5 /* Country.m in Sources */,
 				11326513190FAC4A0011078D /* RecentsTableViewController.m in Sources */,
 				1132651C190FADDA0011078D /* PhotoViewController.m in Sources */,
 				117040D4190FCABA009F30D5 /* Place.m in Sources */,
