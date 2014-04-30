@@ -13,6 +13,7 @@
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UIImage *image;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -45,6 +46,8 @@
     self.image = nil;
     
     if (self.picture) {
+        [self.activityIndicator startAnimating];
+        
         NSURL *url = [FlickrFetcher URLforPhoto:self.picture.raw format:FlickrPhotoFormatLarge];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         
@@ -74,6 +77,8 @@
     
     [self.imageView sizeToFit];
     self.scrollView.contentSize = self.image ? self.image.size : CGSizeZero;
+    
+    [self.activityIndicator stopAnimating];
 }
 
 - (UIImageView *)imageView {
