@@ -9,9 +9,10 @@
 #import "PictureViewController.h"
 #import "FlickrFetcher.h"
 
-@interface PictureViewController ()
+@interface PictureViewController () <UIScrollViewDelegate>
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UIImage *image;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -23,7 +24,11 @@
     
     self.title = self.picture.title;
     
-    [self.view addSubview:self.imageView];
+    [self.scrollView addSubview:self.imageView];
+}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    return self.imageView;
 }
 
 #pragma mark Setters / Getters
@@ -40,7 +45,9 @@
 
 - (void)setImage:(UIImage *)image {
     self.imageView.image = image;
+    
     [self.imageView sizeToFit];
+    self.scrollView.contentSize = self.image ? self.image.size : CGSizeZero;
 }
 
 - (UIImageView *)imageView {
@@ -49,5 +56,15 @@
     }
     
     return _imageView;
+}
+
+- (void)setScrollView:(UIScrollView *)scrollView {
+    _scrollView = scrollView;
+    
+    _scrollView.minimumZoomScale = 0.2;
+    _scrollView.maximumZoomScale = 2.0;
+    _scrollView.delegate = self;
+    
+    self.scrollView.contentSize = self.image ? self.image.size : CGSizeZero;
 }
 @end
