@@ -47,6 +47,10 @@ const unsigned int DEFAULT_MAX_RESULTS = 50;
         picture.raw = flickrPicture;
         
         if ([picture.title isEqualToString:@""]) {
+            picture.title = picture.description;
+        }
+        
+        if ([picture.title isEqualToString:@""]) {
             picture.title = @"Unknown";
         }
         

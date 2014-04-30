@@ -53,6 +53,7 @@
     
     if (picture) {
         cell.textLabel.text = picture.title;
+        cell.detailTextLabel.text = picture.description;
     }
     
     return cell;
