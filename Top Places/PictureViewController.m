@@ -21,6 +21,8 @@
 {
     [super viewDidLoad];
     
+    self.title = self.picture.title;
+    
     [self.view addSubview:self.imageView];
 }
 
