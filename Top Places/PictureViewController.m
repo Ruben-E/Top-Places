@@ -10,51 +10,42 @@
 #import "FlickrFetcher.h"
 
 @interface PictureViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *pictureView;
+@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UIImage *image;
 
 @end
 
 @implementation PictureViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    if (self.picture) {
-        self.title = self.picture.title;
-        
-        NSData *data = [[NSData alloc] initWithContentsOfURL:[FlickrFetcher URLforPhoto:self.picture.raw format:FlickrPhotoFormatLarge]];
-        UIImage *tmpImage = [[UIImage alloc] initWithData:data];
+    [self.view addSubview:self.imageView];
+}
 
-        self.pictureView.image = tmpImage;
+#pragma mark Setters / Getters
+
+-(void)setPicture:(Picture *)picture {
+    _picture = picture;
+    
+    self.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[FlickrFetcher URLforPhoto:self.picture.raw format:FlickrPhotoFormatLarge]]];
+}
+
+- (UIImage *)image {
+    return self.imageView.image;
+}
+
+- (void)setImage:(UIImage *)image {
+    self.imageView.image = image;
+    [self.imageView sizeToFit];
+}
+
+- (UIImageView *)imageView {
+    if (!_imageView) {
+        _imageView = [[UIImageView alloc] init];
     }
-    // Do any additional setup after loading the view.
+    
+    return _imageView;
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
