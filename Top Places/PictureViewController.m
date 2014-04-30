@@ -7,8 +7,10 @@
 //
 
 #import "PictureViewController.h"
+#import "FlickrFetcher.h"
 
 @interface PictureViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *pictureView;
 
 @end
 
@@ -26,6 +28,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if (self.picture) {
+        self.title = self.picture.title;
+        
+        NSData *data = [[NSData alloc] initWithContentsOfURL:[FlickrFetcher URLforPhoto:self.picture.raw format:FlickrPhotoFormatLarge]];
+        UIImage *tmpImage = [[UIImage alloc] initWithData:data];
+
+        self.pictureView.image = tmpImage;
+    }
     // Do any additional setup after loading the view.
 }
 
