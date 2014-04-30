@@ -23,5 +23,6 @@
 @property (nonatomic) NSUInteger owner;
 @property (nonatomic) NSUInteger uploaded_at;
 @property (nonatomic, strong) NSString *url;
+@property (nonatomic, strong) NSDictionary *raw;
 
 @end
