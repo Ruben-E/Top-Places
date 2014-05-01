@@ -76,9 +76,19 @@
     self.imageView.image = image;
     
     [self.imageView sizeToFit];
-    self.scrollView.contentSize = self.image ? self.image.size : CGSizeZero;
     
-    [self.activityIndicator stopAnimating];
+    if (image) {
+        self.scrollView.contentSize = image ? self.image.size : CGSizeZero;
+        
+        int scrollViewWidth = self.scrollView.bounds.size.width;
+        int imageViewWidth = self.image.size.width;
+        float zoomScale = (float) scrollViewWidth / (float) imageViewWidth;
+        
+        self.scrollView.zoomScale = zoomScale;
+        self.scrollView.minimumZoomScale = zoomScale;
+        
+        [self.activityIndicator stopAnimating];
+    }
 }
 
 - (UIImageView *)imageView {
@@ -92,10 +102,14 @@
 - (void)setScrollView:(UIScrollView *)scrollView {
     _scrollView = scrollView;
     
-    _scrollView.minimumZoomScale = 0.2;
-    _scrollView.maximumZoomScale = 2.0;
-    _scrollView.delegate = self;
+    _scrollView.contentSize = self.image ? self.image.size : CGSizeZero;
     
-    self.scrollView.contentSize = self.image ? self.image.size : CGSizeZero;
+    _scrollView.minimumZoomScale = 0.1;
+    _scrollView.maximumZoomScale = 2.0;
+    _scrollView.clipsToBounds = YES;
+    
+    _scrollView.delegate = self;
+    _scrollView.autoresizingMask = (UIViewAutoresizingFlexibleWidth |
+                                   UIViewAutoresizingFlexibleHeight);
 }
 @end
