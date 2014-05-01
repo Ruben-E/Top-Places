@@ -18,6 +18,8 @@
 
 extern unsigned int const DEFAULT_MAX_RESULTS;
 
+- (void)parseFlickrDataWithMaxResults:(NSUInteger)maxResults;
+- (void)parseFlickrData;
 - (Picture *)getPictureByRowNumber:(NSUInteger)rowNumber;
 
 @end

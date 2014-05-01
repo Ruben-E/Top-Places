@@ -15,22 +15,24 @@
 const unsigned int DEFAULT_MAX_RESULTS = 50;
 
 - (NSMutableArray *)pictures {
-    return [self pictures:DEFAULT_MAX_RESULTS];
-}
-
-- (NSMutableArray *)pictures:(NSUInteger)maxResults {
-    if (!_pictures || ([_pictures count] != maxResults)) {
-        NSURL *url = [FlickrFetcher URLforPhotosInPlace:self.placeId maxResults:maxResults];
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        
-        NSLog(@"%@", data);
-        
-        NSDictionary *content = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
-        
-        _pictures = [self convertFlickrResponse:content];
+    if (!_pictures) {
+        _pictures = [[NSMutableArray alloc] init];
     }
     
     return _pictures;
+}
+
+- (void)parseFlickrDataWithMaxResults:(NSUInteger)maxResults {
+    NSURL *url = [FlickrFetcher URLforPhotosInPlace:self.placeId maxResults:maxResults];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    
+    NSDictionary *content = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+    
+    self.pictures = [self convertFlickrResponse:content];
+}
+
+- (void)parseFlickrData {
+    [self parseFlickrDataWithMaxResults:DEFAULT_MAX_RESULTS];
 }
 
 - (NSMutableArray *)convertFlickrResponse:(NSDictionary *)response {
