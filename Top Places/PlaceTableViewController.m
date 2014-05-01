@@ -27,12 +27,15 @@
     [self startDownloadingData];
 }
 
-- (void)startDownloadingData {
+- (IBAction)startDownloadingData {
+    [self.refreshControl beginRefreshing];
+    
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0ul);
     dispatch_async(queue, ^{
         [self.place parseFlickrData];
         
         dispatch_sync(dispatch_get_main_queue(), ^{
+            [self.refreshControl endRefreshing];
             [self.tableView reloadData];
         });
     });

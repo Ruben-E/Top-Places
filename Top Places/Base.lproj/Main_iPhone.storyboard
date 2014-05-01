@@ -105,6 +105,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="C9A-PB-7R6"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="82Z-fa-wuH">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="startDownloadingData" destination="MdU-tV-ADM" eventType="valueChanged" id="smO-yc-yFk"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m5L-3q-iUT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
