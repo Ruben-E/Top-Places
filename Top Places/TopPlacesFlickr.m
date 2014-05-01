@@ -30,13 +30,7 @@
     
     NSDictionary *content = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
     
-    [self convertFlickrResponse:content];
-    
-    if ([self.countries isKindOfClass:[NSArray class]]) {
-        return YES;
-    }
-    
-    return NO;
+    return [self convertFlickrResponse:content];
 }
 
 - (void)addCountry:(Country *)country {
@@ -95,38 +89,48 @@
     return nil;
 }
 
-- (void)convertFlickrResponse:(NSDictionary *)response {
-    NSDictionary *placesResults = response[@"places"];
-    NSArray *places = placesResults[@"place"];
+- (BOOL)convertFlickrResponse:(NSDictionary *)response {
+    if (response) {
     
-    for (NSDictionary *flickrPlace in places) {
-        NSString *placeName = flickrPlace[@"_content"];
-        NSArray *placeNameParts = [placeName componentsSeparatedByString:@", "];
-        
-        NSString *cityName = [placeNameParts firstObject];
-        NSString *countryName = [placeNameParts lastObject];
-        
-        NSArray *middleItems = [placeNameParts subarrayWithRange: NSMakeRange(1, [placeNameParts count] - 2)];
-        NSString *state = [middleItems componentsJoinedByString:@", "];
-        
-        if (cityName && countryName) {
-        
-            Country *country = [self getCountryByName:countryName];
-            if (!country) {
-                country = [[Country alloc] init];
-                country.name = countryName;
+        NSDictionary *placesResults = response[@"places"];
+        NSArray *places = placesResults[@"place"];
+    
+        if (placesResults && places) {
+    
+            for (NSDictionary *flickrPlace in places) {
+                NSString *placeName = flickrPlace[@"_content"];
+                NSArray *placeNameParts = [placeName componentsSeparatedByString:@", "];
                 
-                [self addCountry:country];
+                NSString *cityName = [placeNameParts firstObject];
+                NSString *countryName = [placeNameParts lastObject];
+                
+                NSArray *middleItems = [placeNameParts subarrayWithRange: NSMakeRange(1, [placeNameParts count] - 2)];
+                NSString *state = [middleItems componentsJoinedByString:@", "];
+                
+                if (cityName && countryName) {
+                
+                    Country *country = [self getCountryByName:countryName];
+                    if (!country) {
+                        country = [[Country alloc] init];
+                        country.name = countryName;
+                        
+                        [self addCountry:country];
+                    }
+                    
+                    Place *place = [[Place alloc] init];
+                    place.state = state;
+                    place.name = cityName;
+                    place.placeId = flickrPlace[@"place_id"];
+                    
+                    [country.places addObject:place];
+                }
             }
             
-            Place *place = [[Place alloc] init];
-            place.state = state;
-            place.name = cityName;
-            place.placeId = flickrPlace[@"place_id"];
-            
-            [country.places addObject:place];
+            return YES;
         }
     }
+    
+    return NO;
 }
 
 #pragma mark Setters / Getters
