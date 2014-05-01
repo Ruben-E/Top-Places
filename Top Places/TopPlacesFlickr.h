@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSMutableArray *countries;
 
 - (TopPlacesFlickr *)initWithFlickrData;
+- (BOOL)parseFlickrData;
 
 - (NSArray *)getPictures;
 - (NSArray *)getPlaces;

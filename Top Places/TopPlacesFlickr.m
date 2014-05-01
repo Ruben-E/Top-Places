@@ -18,18 +18,28 @@
     self = [super init];
     
     if (self) {
-        NSURL *url = [FlickrFetcher URLforTopPlaces];
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        
-        NSDictionary *content = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
-        
-        [self convertFlickrResponse:content];
+        [self parseFlickrData];
     }
     
     return self;
 }
 
--(void)addCountry:(Country *)country {
+- (BOOL)parseFlickrData {
+    NSURL *url = [FlickrFetcher URLforTopPlaces];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    
+    NSDictionary *content = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+    
+    [self convertFlickrResponse:content];
+    
+    if ([self.countries isKindOfClass:[NSArray class]]) {
+        return YES;
+    }
+    
+    return NO;
+}
+
+- (void)addCountry:(Country *)country {
     [self.countries addObject:country];
 }
 
