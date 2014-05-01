@@ -47,6 +47,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Top Places" id="1LT-fU-9o3"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="rpE-lv-Q2P">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="startDownloadingData" destination="USy-WN-n95" eventType="valueChanged" id="Thy-TH-PCY"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQn-Ne-dbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="vy8-CG-wT5">

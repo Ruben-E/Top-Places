@@ -24,29 +24,20 @@
     [super viewDidLoad];
     
     [self startDownloadingData];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)startDownloadingData {
+- (IBAction)startDownloadingData {
+    [self.refreshControl beginRefreshing];
+    
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0ul);
     dispatch_async(queue, ^{
         [self.topPlacesFlickr parseFlickrData];
         
         dispatch_sync(dispatch_get_main_queue(), ^{
+            [self.refreshControl endRefreshing];
             [self.tableView reloadData];
         });
     });
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
