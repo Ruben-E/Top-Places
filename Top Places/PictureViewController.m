@@ -37,8 +37,6 @@
 -(void)setPicture:(Picture *)picture {
     _picture = picture;
     
-    self.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[FlickrFetcher URLforPhoto:self.picture.raw format:FlickrPhotoFormatLarge]]];
-    
     [self startDownloadingImage];
 }
 
