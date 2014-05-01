@@ -49,6 +49,10 @@
                     <navigationItem key="navigationItem" title="Top Places" id="1LT-fU-9o3"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQn-Ne-dbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="vy8-CG-wT5">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
             </objects>
             <point key="canvasLocation" x="1450" y="-203"/>
         </scene>

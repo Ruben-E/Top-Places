@@ -23,11 +23,24 @@
 {
     [super viewDidLoad];
     
+    [self startDownloadingData];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)startDownloadingData {
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0ul);
+    dispatch_async(queue, ^{
+        [self.topPlacesFlickr parseFlickrData];
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    });
 }
 
 - (void)didReceiveMemoryWarning
@@ -138,7 +151,7 @@
 
 - (TopPlacesFlickr *)topPlacesFlickr {
     if (!_topPlacesFlickr) {
-        _topPlacesFlickr = [[TopPlacesFlickr alloc] initWithFlickrData];
+        _topPlacesFlickr = [[TopPlacesFlickr alloc] init];
     }
     
     return _topPlacesFlickr;
