@@ -7,6 +7,7 @@
 //
 
 #import "RecentsTableViewController.h"
+#import "PictureViewController.h"
 
 @interface RecentsTableViewController ()
 

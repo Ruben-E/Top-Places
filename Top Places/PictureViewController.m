@@ -85,6 +85,8 @@
         self.scrollView.zoomScale = zoomScale;
         self.scrollView.minimumZoomScale = zoomScale;
         
+        self.imageView.frame = CGRectMake(0,0, image.size.width, image.size.height);
+        
         [self.activityIndicator stopAnimating];
     }
 }

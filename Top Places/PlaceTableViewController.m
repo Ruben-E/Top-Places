@@ -41,6 +41,16 @@
     });
 }
 
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    id detail = self.splitViewController.viewControllers[1];
+    if ([detail isKindOfClass:[PictureViewController class]]) {
+        PictureViewController *pictureViewController = (PictureViewController *)detail;
+        pictureViewController.picture = [self.place getPictureByRowNumber:indexPath.row];
+    }
+}
+
 #pragma mark - Table view data source
 
 //- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
