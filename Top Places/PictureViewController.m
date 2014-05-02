@@ -78,6 +78,8 @@
     if (image) {
         self.scrollView.contentSize = image ? self.image.size : CGSizeZero;
         
+        self.imageView.frame = CGRectMake(0,0, image.size.width, image.size.height);
+        
         int scrollViewWidth = self.scrollView.bounds.size.width;
         int imageViewWidth = self.image.size.width;
         float zoomScale = (float) scrollViewWidth / (float) imageViewWidth;
@@ -85,7 +87,7 @@
         self.scrollView.zoomScale = zoomScale;
         self.scrollView.minimumZoomScale = zoomScale;
         
-        self.imageView.frame = CGRectMake(0,0, image.size.width, image.size.height);
+        
         
         [self.activityIndicator stopAnimating];
     }
