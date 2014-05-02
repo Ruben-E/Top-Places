@@ -211,7 +211,7 @@
         <scene sceneID="0UJ-um-NUJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i3Y-Nf-eHX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Top Places" id="xkU-Al-psd"/>
+                    <tabBarItem key="tabBarItem" title="Top Places" image="topplaces-icon" id="xkU-Al-psd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8na-lV-xwX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -230,7 +230,7 @@
         <scene sceneID="09r-u0-VeS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="omd-aG-OoU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Recents" id="Elr-aZ-Glf"/>
+                    <tabBarItem key="tabBarItem" title="Recents" image="recents-icon" id="Elr-aZ-Glf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="b6b-yL-fwz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -246,6 +246,10 @@
             <point key="canvasLocation" x="924" y="533"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="recents-icon" width="24" height="24"/>
+        <image name="topplaces-icon" width="25" height="25"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
