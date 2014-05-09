@@ -76,18 +76,26 @@
     [self.imageView sizeToFit];
     
     if (image) {
-        self.scrollView.contentSize = image ? self.image.size : CGSizeZero;
+        //TODO: Als de vorige afbeelding kleiner is dan de breedte van het scherm wordt de volgende afbeelding te groot geladen.
+        CGAffineTransform transform = CGAffineTransformMakeScale(1.0, 1.0);
+        self.imageView.transform = transform;
+        
+        self.scrollView.contentSize = self.image.size;
         
         self.imageView.frame = CGRectMake(0,0, image.size.width, image.size.height);
         
         int scrollViewWidth = self.scrollView.bounds.size.width;
-        int imageViewWidth = self.image.size.width;
+        int imageViewWidth = self.imageView.frame.size.width;
         float zoomScale = (float) scrollViewWidth / (float) imageViewWidth;
         
         self.scrollView.zoomScale = zoomScale;
         self.scrollView.minimumZoomScale = zoomScale;
+        self.scrollView.maximumZoomScale = 2.0;
         
+        [self.scrollView scrollRectToVisible:CGRectMake(0, 0, 1, 1)
+                                    animated:YES];
         
+        self.title = self.picture.title;
         
         [self.activityIndicator stopAnimating];
     }
