@@ -54,7 +54,7 @@
         Picture *picture = [self.place getPictureByRowNumber:indexPath.row];
         PictureViewController *pictureViewController = (PictureViewController *)detail;
         
-        [self prepateImagePictureViewController:pictureViewController toDisplayPicture:picture];
+        [self prepareImagePictureViewController:pictureViewController toDisplayPicture:picture];
     }
 }
 
@@ -88,7 +88,7 @@
 
 
 
-- (void)prepateImagePictureViewController:(PictureViewController *)pictureViewController toDisplayPicture:(Picture *)picture {
+- (void)prepareImagePictureViewController:(PictureViewController *)pictureViewController toDisplayPicture:(Picture *)picture {
     pictureViewController.pictureURL = picture.url;
     pictureViewController.pictureTitle = picture.title;
     pictureViewController.title = picture.title;
@@ -110,7 +110,7 @@
         Picture *picture = [self.place getPictureByRowNumber:indexPath.row];
         
         if (picture) {
-            [self prepateImagePictureViewController:pictureViewController toDisplayPicture:picture];
+            [self prepareImagePictureViewController:pictureViewController toDisplayPicture:picture];
         }
     }
 }
