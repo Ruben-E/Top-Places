@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		111B5ABF191CAF96002E121C /* NSUserDefaultsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B5ABE191CAF96002E121C /* NSUserDefaultsHelper.m */; };
 		113264DA190FA61C0011078D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113264D9190FA61C0011078D /* Foundation.framework */; };
 		113264DC190FA61C0011078D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113264DB190FA61C0011078D /* CoreGraphics.framework */; };
 		113264DE190FA61C0011078D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113264DD190FA61C0011078D /* UIKit.framework */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		111B5ABD191CAF96002E121C /* NSUserDefaultsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSUserDefaultsHelper.h; sourceTree = "<group>"; };
+		111B5ABE191CAF96002E121C /* NSUserDefaultsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSUserDefaultsHelper.m; sourceTree = "<group>"; };
 		113264D6190FA61C0011078D /* Top Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Top Places.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		113264D9190FA61C0011078D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		113264DB190FA61C0011078D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -106,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		111B5ABC191CAF85002E121C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				111B5ABD191CAF96002E121C /* NSUserDefaultsHelper.h */,
+				111B5ABE191CAF96002E121C /* NSUserDefaultsHelper.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		113264CD190FA61C0011078D = {
 			isa = PBXGroup;
 			children = (
@@ -139,19 +151,20 @@
 		113264DF190FA61C0011078D /* Top Places */ = {
 			isa = PBXGroup;
 			children = (
-				117040CE190FCA32009F30D5 /* Model */,
-				1132651D190FAFF00011078D /* FlickrFetcher */,
-				11326517190FAD740011078D /* PlaceTableViewController.h */,
 				1132651A190FADDA0011078D /* PictureViewController.h */,
+				11326517190FAD740011078D /* PlaceTableViewController.h */,
 				11326511190FAC4A0011078D /* RecentsTableViewController.h */,
 				11326514190FACEE0011078D /* TopPlacesTableViewController.h */,
-				11326518190FAD740011078D /* PlaceTableViewController.m */,
 				1132651B190FADDA0011078D /* PictureViewController.m */,
+				11326518190FAD740011078D /* PlaceTableViewController.m */,
 				11326512190FAC4A0011078D /* RecentsTableViewController.m */,
 				11326515190FACEE0011078D /* TopPlacesTableViewController.m */,
 				113264F4190FA61C0011078D /* Images.xcassets */,
 				113264EE190FA61C0011078D /* Main_iPad.storyboard */,
 				113264EB190FA61C0011078D /* Main_iPhone.storyboard */,
+				1132651D190FAFF00011078D /* FlickrFetcher */,
+				111B5ABC191CAF85002E121C /* Helpers */,
+				117040CE190FCA32009F30D5 /* Model */,
 				113264E0190FA61C0011078D /* Supporting Files */,
 			);
 			path = "Top Places";
@@ -320,6 +333,7 @@
 				11326513190FAC4A0011078D /* RecentsTableViewController.m in Sources */,
 				1132651C190FADDA0011078D /* PictureViewController.m in Sources */,
 				117040D4190FCABA009F30D5 /* Place.m in Sources */,
+				111B5ABF191CAF96002E121C /* NSUserDefaultsHelper.m in Sources */,
 				113264E6190FA61C0011078D /* main.m in Sources */,
 				11326516190FACEE0011078D /* TopPlacesTableViewController.m in Sources */,
 			);

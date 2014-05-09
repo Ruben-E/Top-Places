@@ -9,6 +9,7 @@
 #import "PlaceTableViewController.h"
 #import "Place.h"
 #import "PictureViewController.h"
+#import "NSUserDefaultsHelper.h"
 
 @interface PlaceTableViewController ()
 
@@ -85,10 +86,14 @@
     return cell;
 }
 
+
+
 - (void)prepateImagePictureViewController:(PictureViewController *)pictureViewController toDisplayPicture:(Picture *)picture {
     pictureViewController.pictureURL = picture.url;
     pictureViewController.pictureTitle = picture.title;
     pictureViewController.title = picture.title;
+    
+    [NSUserDefaultsHelper savePictureWithURL:[picture.url absoluteString] andTitle:picture.title];
 }
 
 #pragma mark - Navigation
