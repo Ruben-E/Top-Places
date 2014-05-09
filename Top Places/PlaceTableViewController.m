@@ -50,8 +50,13 @@
     }
     
     if ([detail isKindOfClass:[PictureViewController class]]) {
+        Picture *picture = [self.place getPictureByRowNumber:indexPath.row];
         PictureViewController *pictureViewController = (PictureViewController *)detail;
-        pictureViewController.picture = [self.place getPictureByRowNumber:indexPath.row];
+        
+        
+        pictureViewController.pictureURL = picture.url;
+        pictureViewController.pictureTitle = picture.title;
+        pictureViewController.title = picture.title;
     }
 }
 
@@ -135,7 +140,8 @@
         Picture *picture = [self.place getPictureByRowNumber:indexPath.row];
         
         if (picture) {
-            pictureViewController.picture = picture;
+            pictureViewController.pictureURL = picture.url;
+            pictureViewController.pictureTitle = picture.title;
         }
     }
 }

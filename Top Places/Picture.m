@@ -7,7 +7,13 @@
 //
 
 #import "Picture.h"
+#import "FlickrFetcher.h"
 
 @implementation Picture
+
+- (NSURL *)url {
+    NSURL *url = [FlickrFetcher URLforPhoto:self.raw format:FlickrPhotoFormatLarge];
+    return url;
+}
 
 @end

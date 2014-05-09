@@ -9,7 +9,7 @@
 #import "PictureViewController.h"
 #import "FlickrFetcher.h"
 
-@interface PictureViewController () <UIScrollViewDelegate>
+@interface PictureViewController () <UIScrollViewDelegate, UISplitViewControllerDelegate>
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UIImage *image;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -23,7 +23,7 @@
 {
     [super viewDidLoad];
     
-    self.title = self.picture.title;
+    self.title = self.pictureTitle;
     
     [self.scrollView addSubview:self.imageView];
 }
@@ -32,10 +32,40 @@
     return self.imageView;
 }
 
-#pragma mark Setters / Getters
+#pragma mark - UISplitViewControllerDelegate
 
--(void)setPicture:(Picture *)picture {
-    _picture = picture;
+- (void)awakeFromNib {
+    self.splitViewController.delegate = self;
+}
+
+- (BOOL)splitViewController:(UISplitViewController *)svc
+   shouldHideViewController:(UIViewController *)vc
+              inOrientation:(UIInterfaceOrientation)orientation
+{
+    return UIInterfaceOrientationIsPortrait(orientation);
+}
+
+- (void)splitViewController:(UISplitViewController *)svc
+     willHideViewController:(UIViewController *)aViewController
+          withBarButtonItem:(UIBarButtonItem *)barButtonItem
+       forPopoverController:(UIPopoverController *)pc
+{
+    barButtonItem.title = @"Top Places";
+    self.navigationItem.leftBarButtonItem = barButtonItem;
+}
+
+- (void)splitViewController:(UISplitViewController *)svc
+     willShowViewController:(UIViewController *)aViewController
+  invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    self.navigationItem.leftBarButtonItem = nil;
+}
+
+
+#pragma mark - Setters / Getters
+
+- (void)setPictureURL:(NSURL *)pictureURL {
+    _pictureURL = pictureURL;
     
     [self startDownloadingImage];
 }
@@ -43,17 +73,17 @@
 - (void)startDownloadingImage {
     self.image = nil;
     
-    if (self.picture) {
+    if (self.pictureURL) {
         [self.activityIndicator startAnimating];
         
-        NSURL *url = [FlickrFetcher URLforPhoto:self.picture.raw format:FlickrPhotoFormatLarge];
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        //NSURL *url = [FlickrFetcher URLforPhoto:self.picture.raw format:FlickrPhotoFormatLarge];
+        NSURLRequest *request = [NSURLRequest requestWithURL:self.pictureURL];
         
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration ephemeralSessionConfiguration];
         NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
         NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:request completionHandler:^(NSURL *localfile, NSURLResponse *response, NSError *error) {
             if (!error) {
-                if ([request.URL isEqual:url]) {
+                if ([request.URL isEqual:self.pictureURL]) {
                     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:localfile]];
                     dispatch_async(dispatch_get_main_queue(), ^{
                         self.image = image;
@@ -95,7 +125,7 @@
         [self.scrollView scrollRectToVisible:CGRectMake(0, 0, 1, 1)
                                     animated:YES];
         
-        self.title = self.picture.title;
+        self.title = self.pictureTitle;
         
         [self.activityIndicator stopAnimating];
     }

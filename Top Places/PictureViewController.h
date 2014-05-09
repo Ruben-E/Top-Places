@@ -11,6 +11,7 @@
 
 @interface PictureViewController : UIViewController
 
-@property (nonatomic, strong) Picture *picture;
+@property (nonatomic, strong) NSURL *pictureURL;
+@property (nonatomic, strong) NSString *pictureTitle;
 
 @end

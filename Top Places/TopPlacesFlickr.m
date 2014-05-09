@@ -26,6 +26,7 @@
 
 - (BOOL)parseFlickrData {
     NSURL *url = [FlickrFetcher URLforTopPlaces];
+    NSLog(@"URL: %@", url);
     NSData *data = [NSData dataWithContentsOfURL:url];
     
     NSDictionary *content = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
