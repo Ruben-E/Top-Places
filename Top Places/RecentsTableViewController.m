@@ -18,6 +18,13 @@
 
 @implementation RecentsTableViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    if (self.recents) {
+        self.recents = nil;
+        [self.tableView reloadData];
+    }
+}
+
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
