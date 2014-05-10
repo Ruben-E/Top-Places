@@ -15,5 +15,6 @@
 @property (nonatomic, strong) NSMutableArray *places;
 
 - (Place *)getPlaceByRowNumber:(NSUInteger)rowNumber;
+- (void)sortPlaces;
 
 @end

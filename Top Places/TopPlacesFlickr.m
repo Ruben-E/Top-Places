@@ -127,6 +127,10 @@
                 }
             }
             
+            for (Country *country in self.countries) {
+                [country sortPlaces];
+            }
+            
             return YES;
         }
     }

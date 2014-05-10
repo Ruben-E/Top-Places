@@ -22,4 +22,11 @@
     return _places;
 }
 
+- (void)sortPlaces {
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    NSArray *sortedArray = [self.places sortedArrayUsingDescriptors:sortDescriptors];
+    self.places = [[NSMutableArray alloc] initWithArray:sortedArray];
+}
+
 @end
