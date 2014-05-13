@@ -17,6 +17,13 @@
     [picture setObject:URL forKey:@"URL"];
     [picture setObject:title forKey:@"title"];
     
+    for (NSDictionary *pictureFromList in pictures) {
+        if ([(NSString *)[pictureFromList objectForKey:@"URL"] isEqualToString:URL] && [(NSString *)[pictureFromList objectForKey:@"title"] isEqualToString:title]) {
+            [pictures removeObject:pictureFromList];
+            break;
+        }
+    }
+    
     [pictures insertObject:picture atIndex:0];
     
     if ([pictures count] > 50) {
