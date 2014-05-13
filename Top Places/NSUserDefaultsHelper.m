@@ -26,7 +26,7 @@
     
     [pictures insertObject:picture atIndex:0];
     
-    if ([pictures count] > 50) {
+    if ([pictures count] > 20) {
         [pictures removeLastObject];
     }
     

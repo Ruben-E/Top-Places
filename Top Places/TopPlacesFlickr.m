@@ -97,6 +97,8 @@
         NSArray *places = placesResults[@"place"];
     
         if (placesResults && places) {
+            
+            self.countries = [[NSMutableArray alloc] init];
     
             for (NSDictionary *flickrPlace in places) {
                 NSString *placeName = flickrPlace[@"_content"];
