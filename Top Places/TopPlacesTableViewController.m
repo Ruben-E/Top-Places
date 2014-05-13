@@ -13,8 +13,6 @@
 
 @interface TopPlacesTableViewController ()
 
-
-
 @end
 
 @implementation TopPlacesTableViewController

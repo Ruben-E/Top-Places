@@ -123,7 +123,7 @@
         self.scrollView.maximumZoomScale = 2.0;
         
         [self.scrollView scrollRectToVisible:CGRectMake(0, 0, 1, 1)
-                                    animated:YES];
+                                    animated:NO];
         
         self.title = self.pictureTitle;
         
